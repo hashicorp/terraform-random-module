@@ -1,0 +1,11 @@
+name: Weekend Cleanup
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * SAT'
+
+jobs:
+  call-delete-all-webhooks:
+    uses: hashicorp/terraform-random-1/.github/workflows/delete_all_webhooks.yaml@main
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

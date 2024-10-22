@@ -4,4 +4,5 @@ resource "random_string" "id" {
   }
 
   length = var.string_length
+  min_lower = var.min_lower
 }
